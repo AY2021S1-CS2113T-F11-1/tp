@@ -1,6 +1,6 @@
 package storage;
 
-import workout.workoutSession.WorkoutSession;
+import workout.workoutsession.WorkoutSession;
 
 import java.util.ArrayList;
 import java.util.List;
