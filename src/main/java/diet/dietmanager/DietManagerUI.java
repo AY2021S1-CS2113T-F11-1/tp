@@ -19,6 +19,7 @@ public class DietManagerUI {
     }
 
     public String getInput() {
+        System.out.println("Key in your command: ");
         Scanner in = new Scanner(System.in);
         return in.nextLine();
     }
