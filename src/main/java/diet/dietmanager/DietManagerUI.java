@@ -57,4 +57,11 @@ public class DietManagerUI {
         }
         return "unspecified";
     }
+
+    public static void printStartLoading() {
+
+    }
+    public static void printFinishLoading() {
+
+    }
 }
