@@ -1,0 +1,7 @@
+{
+  "name": "Schwarzenegger",
+  "age": 30,
+  "height": 188,
+  "weight": 113.0,
+  "expectedWeight": 100.0
+}
