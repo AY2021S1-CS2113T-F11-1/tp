@@ -31,5 +31,12 @@ public class DietTest {
         assertThrows(DateTimeParseException.class, () -> ui.extractDate(input));
     }
 
+    @Test
+    void extract_dateNoTag_expectException() {
+        String input = "/d 2020-11-11";
+        DietManagerUI ui = new DietManagerUI();
+        assertThrows(IndexOutOfBoundsException.class, () -> ui.extractDate(input));
+    }
+
 
 }
