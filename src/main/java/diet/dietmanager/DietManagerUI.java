@@ -61,6 +61,7 @@ public class DietManagerUI {
     public static void printStartLoading() {
 
     }
+
     public static void printFinishLoading() {
 
     }

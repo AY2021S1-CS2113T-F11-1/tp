@@ -19,6 +19,7 @@ public class PastDietSessionRecord implements Comparable<PastDietSessionRecord> 
         return "Session created on " + creationTime.toLocalDate()
                 + ", last edited on " + lastEditTime.toLocalDate();
     }
+
     @Override
     public int compareTo(PastDietSessionRecord o) {
         if (creationTime.isBefore(o.creationTime)) {
