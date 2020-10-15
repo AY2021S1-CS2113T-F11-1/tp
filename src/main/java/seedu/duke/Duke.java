@@ -1,24 +1,40 @@
 package seedu.duke;
 
-import workout.workoutmanager.WorkoutManager;
+import profile.ProfileSession;
 
-import java.util.Scanner;
+import static profile.components.Constants.SCANNER;
 
+/**
+ * The Schwarzenegger program implements an application that keeps track of the user's gym and diet record.
+ */
 public class Duke {
+
     /**
      * Main entry-point for the java.duke.Duke application.
+     *
+     * @param args Unused in Duke.
      */
     public static void main(String[] args) {
-        String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
-        System.out.println("Hello from\n" + logo);
-        System.out.println("What is your name?");
-
-        Scanner in = new Scanner(System.in);
-        System.out.println("Hello " + in.nextLine());
+        new Duke().run();
     }
 
+    /**
+     * Runs Schwarzenegger.
+     */
+    private void run() {
+        System.out.println("Which session do you want to enter?");
+        String session = SCANNER.nextLine().toLowerCase();
+
+        if (session.equals("profile")) {
+            System.out.println("Entering Profile Session...");
+
+            ProfileSession profileSession = new ProfileSession();
+
+            while (!profileSession.hasExit) {
+                profileSession.run();
+            }
+        }
+
+        System.out.println("back");
+    }
 }
