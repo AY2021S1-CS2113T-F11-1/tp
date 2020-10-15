@@ -32,6 +32,9 @@ public class WorkoutSession {
         this.endWorkoutSession = true;
     }
 
+    /**
+     * Starts a workout session
+     */
     public void workoutSessionStart() {
 
         setEndWorkoutSessionF();
