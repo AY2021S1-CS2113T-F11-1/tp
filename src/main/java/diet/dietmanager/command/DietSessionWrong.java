@@ -1,10 +1,10 @@
 package diet.dietmanager.command;
 
-import storage.DietManagerStorage;
+import storage.diet.Storage;
 
 public class DietSessionWrong implements Command {
     @Override
-    public void execute(String input, DietManagerStorage storage) {
-        System.out.println("Sorry, I do not get what you are saying.");
+    public void execute(String input, Storage storage) {
+        System.out.println("Sorry! It seems like you've entered an invalid command!");
     }
 }

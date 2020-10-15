@@ -2,6 +2,9 @@ package seedu.duke;
 
 import diet.dietmanager.DietManager;
 import diet.dietmanager.DietManagerUI;
+import workout.workoutmanager.WorkoutManager;
+
+import java.util.Scanner;
 
 public class Duke {
     /**
@@ -37,5 +40,10 @@ public class Duke {
             response = dietManagerUI.getInput();
         }
         System.out.println("Bye, you have exited the Schwarzenegger.");
+    }
+
+    private static void wokroutTest() {
+        WorkoutManager wm = new WorkoutManager();
+        wm.start();
     }
 }

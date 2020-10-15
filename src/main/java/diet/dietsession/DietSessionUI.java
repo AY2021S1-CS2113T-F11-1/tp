@@ -5,12 +5,11 @@ import java.util.Scanner;
 public class DietSessionUI {
 
     public void printOpening() {
-        System.out.println("start recording food: ");
+        System.out.println("Starting Diet Session!");
     }
 
     public void printExit() {
-        System.out.println("end diet session");
-        System.out.println("you have exited DietSession.");
+        System.out.println("you have exited Diet Session.");
     }
 
     public String getInput() {

@@ -20,6 +20,7 @@ public class DietManagerUI {
 
     public String getInput() {
         Scanner in = new Scanner(System.in);
+        assert !in.nextLine().isEmpty();
         return in.nextLine();
     }
 
@@ -31,7 +32,6 @@ public class DietManagerUI {
      * @throws DateTimeParseException if the date string input is not a valid date
      */
     public String extractDate(String input) throws DateTimeParseException, IllegalStateException {
-
         try {
             String dateString = input.split("/t")[0].split(" ", 2)[1].trim();
             Pattern pattern = Pattern.compile("\\d{4}-\\d{2}-\\d{2}");
@@ -41,10 +41,11 @@ public class DietManagerUI {
             return LocalDate.parse(match).format(DateTimeFormatter.ofPattern("MM-dd-yyyy"));
 
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("I do not get your date input and returns current date for you.");
+            System.out.println("I do not understand your date input!");
         }
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        System.out.println("I've replaced it with today's date.");
         return dtf.format(now);
     }
 
@@ -52,8 +53,21 @@ public class DietManagerUI {
         try {
             return input.split("/t")[1].trim();
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Please specify your diet session tag.");
+            System.out.println("Please specify your diet session tag, i.e. breakfast, lunch, dinner");
         }
+        System.out.println("Session is tagged as unspecified.");
         return "unspecified";
+    }
+
+    public void printLine() {
+        System.out.println("-----------------------------------------");
+    }
+
+    public void printStartLoading() {
+        System.out.println("Loading past diet sessions...");
+    }
+
+    public void printFinishLoading() {
+        System.out.println("Loading completed!");
     }
 }

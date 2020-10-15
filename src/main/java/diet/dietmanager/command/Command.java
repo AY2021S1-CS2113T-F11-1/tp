@@ -1,7 +1,10 @@
 package diet.dietmanager.command;
 
-import storage.DietManagerStorage;
+import storage.diet.Storage;
+
+import java.util.logging.Logger;
 
 public interface Command {
-    public void execute(String input, DietManagerStorage storage);
+    Logger logger = Logger.getLogger("java.diet.dietmanager.command");
+    public void execute(String input, Storage storage);
 }
