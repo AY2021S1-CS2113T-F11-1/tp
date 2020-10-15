@@ -10,7 +10,7 @@ public class Food {
     }
 
     public String toString() {
-        return this.name + "with calories: " + this.calories;
+        return this.name + " with calories: " + this.calories;
     }
 
 }

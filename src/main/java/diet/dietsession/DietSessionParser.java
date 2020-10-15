@@ -24,7 +24,7 @@ public class DietSessionParser {
     }
 
     /**
-     * Converts the date and time into a LocalDate object
+     * Converts the date and time into a LocalDate object.
      *
      * @param dateInput Date input string
      * @return LocalDate object

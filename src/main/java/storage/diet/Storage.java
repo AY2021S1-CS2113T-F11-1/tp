@@ -32,6 +32,7 @@ public class Storage {
     /**
      * Initialise the database with locally stored data.
      * If the local file is not found. It creates the relevant file and folder.
+     *
      * @throws IOException If director or file cannot be created.
      */
     public void init(String filePath) throws IOException {
@@ -65,6 +66,7 @@ public class Storage {
     /**
      * Write the content in dietSession to a local file.
      * If the local file is not found. It creates the relevant file and folder.
+     *
      * @throws IOException If director or file cannot be created.
      */
     public void writeToStorageDietSession(String filePath, DietSession dietSession) throws IOException {
@@ -80,21 +82,22 @@ public class Storage {
     public void readFileContents(String filePath, ArrayList<Food> taskList) throws FileNotFoundException {
         File file = new File(filePath);
 
-        Type taskListType = new TypeToken<ArrayList<Food>>(){}.getType();
+        Type taskListType = new TypeToken<ArrayList<Food>>() {
+        }.getType();
 
         JsonReader reader = new JsonReader(new FileReader(file.getPath()));
         taskList.clear();
         taskList.addAll(gson.fromJson(reader, taskListType));
     }
 
-        public DietSession readDietSession (String filePath) throws FileNotFoundException {
-            Gson gson = new Gson();
-            File file = new File(System.getProperty("user.dir") + "/"
-                    + FILEPATH + filePath);
-            DietSession dietSession;
+    public DietSession readDietSession(String filePath) throws FileNotFoundException {
+        Gson gson = new Gson();
+        File file = new File(System.getProperty("user.dir") + "/"
+                + FILEPATH + filePath);
+        DietSession dietSession;
 
-            Reader reader = new FileReader(file.getPath());
-            dietSession = gson.fromJson(reader, DietSession.class);
-            return dietSession;
-        }
+        Reader reader = new FileReader(file.getPath());
+        dietSession = gson.fromJson(reader, DietSession.class);
+        return dietSession;
     }
+}

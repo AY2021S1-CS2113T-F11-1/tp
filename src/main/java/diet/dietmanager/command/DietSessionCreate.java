@@ -19,9 +19,6 @@ public class DietSessionCreate implements Command {
             ds.start();
         } catch (IOException e) {
             System.out.println("It seems like we ran into some problems saving your session...");
-//        } catch (NullPointerException e) {
-//            System.out.println("It seems like you have not recorded anything.");
-//        }
         }
     }
 }

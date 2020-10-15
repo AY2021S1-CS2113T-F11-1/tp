@@ -10,6 +10,7 @@ import java.util.logging.Level;
 
 public class DietSessionLoad implements Command {
     static final String FILEPATH = "saves/diet/";
+
     @Override
     public void execute(String input, Storage storage) {
         File folder = new File(FILEPATH);

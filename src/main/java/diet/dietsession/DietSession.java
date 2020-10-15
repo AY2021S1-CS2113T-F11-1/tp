@@ -23,6 +23,7 @@ public class DietSession {
     public boolean endDietSession = false;
 
     private static Logger logger = Logger.getLogger("java.diet.dietsession");
+
     public DietSession(String typeInput, String dateInput) {
         this.cl = new CommandLib();
         cl.initDietManagerCL();
